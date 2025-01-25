@@ -28,7 +28,6 @@ class Exporter:
         import polars as pl
         import os
 
-        print(filepath)
         filename = filepath.split("/")[-1].split(".")[0]
         output_path = f"/opt/airflow/datalake/bronze/{filename}.parquet"
         pl.read_csv(filepath).write_parquet(output_path)
