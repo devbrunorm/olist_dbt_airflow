@@ -1,0 +1,64 @@
+models:
+  - name: gold.orders_fact
+    description: >
+      Customers' orders fact table model.
+    columns:
+      - name: order_id
+        description: >
+          The unique identifier for the order.
+        tests:
+          - string_not_empty
+          - not_null
+      - name: order_status
+        description: >
+          Status of the order.
+        tests:
+          - string_not_empty
+          - not_null
+      - name: order_approved_at
+        description: >
+          Date and time the order was approved.
+      - name: order_item_id
+        description: >
+          The unique identifier for the order item.
+      - name: product_id
+        description: >
+          The unique identifier for the product.
+      - name: price
+        description: >
+          The price of the product.
+        tests:
+          - numeric
+          - not_null
+          - number_not_negative
+      - name: freight_value
+        description: >
+          The cost of shipping the product.
+        tests:
+          - numeric
+          - not_null
+          - number_not_negative
+      - name: customer_id
+        description: >
+          The unique identifier for the customer.
+        tests:
+          - string_not_empty
+          - not_null
+      - name: customer_city
+        description: >
+          The city where the customer is located.
+        tests:
+          - string_not_empty
+          - not_null
+      - name: customer_state
+        description: >
+          The state where the customer is located.
+        tests:
+          - string_not_empty
+          - not_null
+      - name: customer_region
+        description: "{{ doc('BrazilRegions') }}"
+        tests:
+          - string_not_empty
+          - not_null
+          - valid_brazil_region

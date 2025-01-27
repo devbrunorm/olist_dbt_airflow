@@ -25,6 +25,7 @@ with DAG(
     start_date=datetime(2025, 1, 1),
     schedule_interval="@daily",
     catchup=False,
+    concurrency=1,
     tags=["olist", "dbt"]
 ):
     export_raw_files = PythonOperator(
@@ -35,10 +36,10 @@ with DAG(
             }
     )
 
-    dbt_test = DbtTaskGroup(
-        group_id="dbt_test",
+    dbt_export = DbtTaskGroup(
+        group_id="dbt_export",
         project_config=project_config,
         profile_config=profile_config
     )
 
-    export_raw_files >> dbt_test
+    export_raw_files >> dbt_export
