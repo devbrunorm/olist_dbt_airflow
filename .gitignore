@@ -1,4 +1,4 @@
 .env
 logs/*
 __pycache__/
-datalake/*/*.parquet
+duckdb_data/data.db

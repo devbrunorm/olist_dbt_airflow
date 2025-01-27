@@ -1,0 +1,34 @@
+version: 2
+
+sources:
+  - name: kaggle_source
+    meta:
+      external_location: "/home/airflow/.cache/kagglehub/datasets/olistbr/brazilian-ecommerce/versions/2/{name}.csv"
+    tables:
+      - name: olist_customers_dataset
+        meta:
+          file: "olist_customers_dataset"
+      - name: olist_geolocation_dataset
+        meta:
+          file: "olist_geolocation_dataset"
+      - name: olist_order_items_dataset
+        meta:
+          file: "olist_order_items_dataset"
+      - name: olist_order_payments_dataset
+        meta:
+          file: "olist_order_payments_dataset"
+      - name: olist_order_reviews_dataset
+        meta:
+          file: "olist_order_reviews_dataset"
+      - name: olist_orders_dataset
+        meta:
+          file: "olist_orders_dataset"
+      - name: olist_products_dataset
+        meta:
+          file: "olist_products_dataset"
+      - name: olist_sellers_dataset
+        meta:
+          file: "olist_sellers_dataset"
+      - name: product_category_name_translation
+        meta:
+          file: "product_category_name_translation"

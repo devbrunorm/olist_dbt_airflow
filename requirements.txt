@@ -1,2 +1,4 @@
 kagglehub
-polars
+astronomer-cosmos
+dbt-core
+dbt-duckdb
