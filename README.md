@@ -38,3 +38,6 @@ password: airflow
 ```
 6. Trigger the DAG named "main_dag"
 7. [Extra] After the DAG run is finished, if you desire to check if everything worked, you can run the Python script "script_test_duckdb.py". Note that in order for the script to work, you will need Python and the 'duckdb' module installed.
+
+## Notes
+For some reason, assigning tests via model documentation wasn't working as expected, claiming that the schema definition was duplicated. This issue may be fixed with futher code inspection, although I already searched about it with no success.
